@@ -16,7 +16,7 @@ RUN mkdir /app
 #default directory
 WORKDIR /app
 
-COPY ./app /app
+COPY ./app/ /app
 
 RUN adduser -D user
 #if you dont set the user to user then Docker will run the image using the root account
