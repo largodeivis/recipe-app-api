@@ -23,3 +23,7 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
+
+# admin login
+# admin@pythonapp.com
+# password1
