@@ -70,3 +70,14 @@ class ModelTests(TestCase):
                          "{0} {1} {2}".format(ingredient2.amount,
                                               ingredient2.unit_of_measurement,
                                               ingredient2.name))
+
+    def test_recipe_str(self):
+        """Test recipe string representation"""
+        recipe = models.Recipe.objects.create(
+            user=sample_user(),
+            title="Steak and Mushroom Sauce",
+            time_minutes=5,
+            price=5.00
+        )
+
+        self.assertEqual(str(recipe), recipe.title)
