@@ -24,7 +24,7 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Tag)
-
+admin.site.register(models.Ingredient)
 # admin login
 # admin@pythonapp.com
 # password1

@@ -10,6 +10,7 @@ actions in our viewset. ie:
 """
 router = DefaultRouter()
 router.register('tags', views.TagViewSet)
+router.register('ingredients', views.IngredientViewSet)
 
 app_name = 'recipe'
 

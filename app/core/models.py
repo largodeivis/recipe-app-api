@@ -47,3 +47,21 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Ingredient(models.Model):
+    """Ingredient to be used in recipe"""
+    name = models.CharField(max_length=255)
+    amount = models.FloatField()
+    unit_of_measurement = models.CharField(max_length=255, null=True)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+
+    def __str__(self):
+        if self.unit_of_measurement:
+            return "{0} {1} {2}".format(self.amount, self.unit_of_measurement,
+                                        self.name)
+        else:
+            return "{0} {1}".format(self.amount, self.name)
